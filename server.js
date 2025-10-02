@@ -452,6 +452,23 @@ function isOpposite(a, b) {
   return a && b && a.x + b.x === 0 && a.y + b.y === 0;
 }
 
+const express = require('express');
+const path = require('path');
+const app = express();
+
+const PORT = process.env.PORT || 3000;
+
+// 静态托管前端文件（假设前端在 public 文件夹）
+app.use(express.static(path.join(__dirname, 'public')));
+
+// 默认返回 index.html
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running on port ${PORT}`);
+});
 
 
 
