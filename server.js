@@ -52,7 +52,7 @@ let colorCursor = 0;
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-server.listen(PORT, () => {
+server.listen(PORT,'0.0.0.0', () => {
   console.log(`Server listening on http://localhost:${PORT}`);
 });
 
