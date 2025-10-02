@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LAN Snake Battle // Retro DOS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="crt">
+      <div class="frame">
+        <header class="frame__header">
+          <span class="frame__title">LAN SNAKE BATTLE</span>
+          <span class="frame__mode">:: RETRO DOS MODE ::</span>
+        </header>
+
+        <section class="panel panel--status">
+          <div class="status-row">
+            <span class="label">STATUS</span>
+            <span class="status" id="status">BOOTING...</span>
+          </div>
+          <div class="control-row">
+            <label for="name">CALLSIGN</label>
+            <input id="name" type="text" maxlength="16" autocomplete="off" placeholder="TYPE HANDLE" />
+            <button id="join" type="button">JOIN</button>
+            <span class="hint">ENTER=JOIN ¡¤ WASD/ARROWS=MOVE</span>
+          </div>
+        </section>
+
+        <section class="main">
+          <div class="canvas-wrap">
+            <canvas id="game"></canvas>
+            <div class="overlay hidden" id="overlay"></div>
+          </div>
+
+          <aside class="sidebar">
+            <div class="panel panel--score">
+              <div class="panel__title">SCOREBOARD</div>
+              <table class="scoreboard">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>CALLSIGN</th>
+                    <th>LEN</th>
+                    <th>BEST</th>
+                  </tr>
+                </thead>
+                <tbody id="score-body"></tbody>
+              </table>
+            </div>
+
+            <div class="panel panel--log">
+              <div class="panel__title">SYSTEM LOG</div>
+              <ul class="log" id="log"></ul>
+            </div>
+
+            <div class="panel panel--help">
+              <div class="panel__title">OPS MANUAL</div>
+              <ul>
+                <li>ENTER = JOIN / RESPAWN</li>
+                <li>WASD OR ARROWS = NAV</li>
+                <li>ESC = CLEAR HANDLE</li>
+                <li>HOST ON LAN FOR FRIENDS</li>
+              </ul>
+            </div>
+          </aside>
+        </section>
+
+        <footer class="frame__footer">
+          <span>CODENAME: DOS-SNAKE</span>
+          <span>LISTENING PORT: 3000</span>
+        </footer>
+      </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+  </body>
+</html>
