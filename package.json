@@ -1,0 +1,19 @@
+{
+    "name":  "vs-codex",
+    "version":  "1.0.0",
+    "main":  "server.js",
+    "scripts":  {
+                    "start":  "node server.js",
+                    "dev":  "node server.js"
+                },
+    "keywords":  [
+
+                 ],
+    "author":  "",
+    "license":  "ISC",
+    "description":  "LAN multiplayer retro snake battle game",
+    "dependencies":  {
+                         "express":  "^5.1.0",
+                         "socket.io":  "^4.8.1"
+                     }
+}
